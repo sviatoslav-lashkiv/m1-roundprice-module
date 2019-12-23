@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2019. All rights reserved.
+  ~ @author: Sviatoslav Lashkiv
+  ~ @mail:   ss.lashkiv@gmail.com
+  ~ @github: https://github.com/sviatoslav-lashkiv
+  -->
+
+<config>
+    <modules>
+        <MageCloud_RoundPrice>
+            <version>1.0.0</version>
+        </MageCloud_RoundPrice>
+    </modules>
+    <global>
+        <models>
+            <roundprice>
+                <class>MageCloud_RoundPrice_Model</class>
+            </roundprice>
+            <core>
+                <rewrite>
+                    <store>MageCloud_RoundPrice_Model_Store</store>
+                </rewrite>
+            </core>
+        </models>
+        <helpers>
+            <roundprice>
+                <class>MageCloud_RoundPrice_Helper</class>
+            </roundprice>
+        </helpers>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <roundprice module="roundprice">
+                                            <label>Round Price</label>
+                                        </roundprice>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <roundprice>
+            <settings>
+                <enabled>0</enabled>
+                <method>1</method>
+                <precision>2</precision>
+            </settings>
+        </roundprice>
+    </default>
+</config>
