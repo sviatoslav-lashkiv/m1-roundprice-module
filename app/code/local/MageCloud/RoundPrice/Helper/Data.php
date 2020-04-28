@@ -41,7 +41,7 @@ class MageCloud_RoundPrice_Helper_Data extends Mage_Core_Helper_Abstract
         switch ($this->getRoundMethod()) {
             case self::METHOD_ROUND_UP_VALUE:
                 $pow = pow(10, $this->getRoundPrecision());
-                $price = number_format($price, 4);
+                $price = number_format($price, 4,'.','');
                 $roundPrice = ceil($price * $pow) / $pow;
                 break;
 
